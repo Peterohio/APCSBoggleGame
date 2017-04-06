@@ -4,11 +4,11 @@ import BreezyGUI.*;
 
 public class GameGui extends GBFrame
 {
-	private Label enterWord;
+	private Label word;
 	private Label timer;
-	private Label[][] charField = new Label[4][4];
+	private Button[][] charField = new Button[4][4];
 	
-	private TextField wordEntry;
+	private TextField letters;
 	
 	private Button stop;
 	private Button start;
@@ -16,6 +16,7 @@ public class GameGui extends GBFrame
 	private Button reset;
 	
 	private Grid boggleLetters;
+	private Boolean isUsed[][] = new Boolean[4][4];
 	
 	private final int timeInSeconds = 180;
 	
@@ -27,13 +28,13 @@ public class GameGui extends GBFrame
 		{
 			for(int j=0; j<4; j++)
 			{
-				charField[i][j] = addLabel((boggleLetters.getGridArray()[i][j] + ""),i+1,j+1,1,1);
+				charField[i][j] = addButton((boggleLetters.getGridArray()[i][j] + ""),i+1,j+1,1,1);
 			}
 		}
 		//Create rest of field
-		enterWord = addLabel("Enter Word Here:",5,1,1,1);
+		word = addLabel("Current Word:",5,1,1,1);
 		timer = addLabel("Time:",4,5,1,1);
-		wordEntry = addTextField("",5,2,1,1);
+		letters = addTextField("",5,2,1,1);
 		submit = addButton("Submit",5,2,1,1);
 		start = addButton("Start New Game", 1,5,1,1);
 		stop = addButton("Stop Game", 2,5,1,1);
@@ -61,6 +62,135 @@ public class GameGui extends GBFrame
 			//check text entry and see if it is a valid play
 			//if it is a valid play check to see if it is a word
 			//if both are true, add points and clear text field
+			letters.setText("");
+		}
+		if(buttonClicked == charField[0][0])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[0][1])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[0][2])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[0][3])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[1][0])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[1][1])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[1][2])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[1][3])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[2][0])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[2][1])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[2][2])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[2][3])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[3][0])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[3][1])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[3][2])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
+		}
+		if(buttonClicked == charField[3][3])
+		{
+			if(isUsed[0][0] == false)
+			{
+				letters.setText(letters.getText() + charField[0][0].getLabel());
+				isUsed[0][0] = true;
+			}
 		}
 	}
 	
