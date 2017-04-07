@@ -29,6 +29,7 @@ public class GameGui extends GBFrame
 			for(int j=0; j<4; j++)
 			{
 				charField[i][j] = addButton((boggleLetters.getGridArray()[i][j] + ""),i+1,j+1,1,1);
+				isUsed[i][j] = false;
 			}
 		}
 		//Create rest of field
@@ -63,6 +64,13 @@ public class GameGui extends GBFrame
 			//if it is a valid play check to see if it is a word
 			//if both are true, add points and clear text field
 			letters.setText("");
+			for(int i=0; i<4; i++)
+			{
+				for(int j=0; j<4; j++)
+				{
+					isUsed[i][j] = false;
+				}
+			}
 		}
 		if(buttonClicked == charField[0][0])
 		{
@@ -74,122 +82,122 @@ public class GameGui extends GBFrame
 		}
 		if(buttonClicked == charField[0][1])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[0][1] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[0][1].getLabel());
+				isUsed[0][1] = true;
 			}
 		}
 		if(buttonClicked == charField[0][2])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[0][2] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[0][2].getLabel());
+				isUsed[0][2] = true;
 			}
 		}
 		if(buttonClicked == charField[0][3])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[0][3] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[0][3].getLabel());
+				isUsed[0][3] = true;
 			}
 		}
 		if(buttonClicked == charField[1][0])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[1][0] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[1][0].getLabel());
+				isUsed[1][0] = true;
 			}
 		}
 		if(buttonClicked == charField[1][1])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[1][1] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[1][1].getLabel());
+				isUsed[1][1] = true;
 			}
 		}
 		if(buttonClicked == charField[1][2])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[1][2] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[1][2].getLabel());
+				isUsed[1][2] = true;
 			}
 		}
 		if(buttonClicked == charField[1][3])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[1][3] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[1][3].getLabel());
+				isUsed[1][3] = true;
 			}
 		}
 		if(buttonClicked == charField[2][0])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[2][0] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[2][0].getLabel());
+				isUsed[2][0] = true;
 			}
 		}
 		if(buttonClicked == charField[2][1])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[2][1] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[2][1].getLabel());
+				isUsed[2][1] = true;
 			}
 		}
 		if(buttonClicked == charField[2][2])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[2][2] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[2][2].getLabel());
+				isUsed[2][2] = true;
 			}
 		}
 		if(buttonClicked == charField[2][3])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[2][3] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[2][3].getLabel());
+				isUsed[2][3] = true;
 			}
 		}
 		if(buttonClicked == charField[3][0])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[3][0] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[3][0].getLabel());
+				isUsed[3][0] = true;
 			}
 		}
 		if(buttonClicked == charField[3][1])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[3][1] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[3][1].getLabel());
+				isUsed[3][1] = true;
 			}
 		}
 		if(buttonClicked == charField[3][2])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[3][2] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[3][2].getLabel());
+				isUsed[3][2] = true;
 			}
 		}
 		if(buttonClicked == charField[3][3])
 		{
-			if(isUsed[0][0] == false)
+			if(isUsed[3][3] == false)
 			{
-				letters.setText(letters.getText() + charField[0][0].getLabel());
-				isUsed[0][0] = true;
+				letters.setText(letters.getText() + charField[3][3].getLabel());
+				isUsed[3][3] = true;
 			}
 		}
 	}
