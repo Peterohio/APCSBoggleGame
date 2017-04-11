@@ -5,10 +5,11 @@ import BreezyGUI.*;
 public class GameGui extends GBFrame
 {
 	private Label word;
-	private Label timer;
+	private Label score;
 	private Button[][] charField = new Button[4][4];
 	
 	private TextField letters;
+	private TextField scoreBox;
 	
 	private Button stop;
 	private Button start;
@@ -19,6 +20,7 @@ public class GameGui extends GBFrame
 	private Boolean isUsed[][] = new Boolean[4][4];
 	
 	private final int timeInSeconds = 180;
+	private int scoreNum;
 	
 	public GameGui()
 	{	
@@ -32,14 +34,17 @@ public class GameGui extends GBFrame
 				isUsed[i][j] = false;
 			}
 		}
+		//Variables for score and time
+		scoreNum = 0;
 		//Create rest of field
 		word = addLabel("Current Word:",5,1,1,1);
-		timer = addLabel("Time:",4,5,1,1);
+		score = addLabel("Score:",4,5,1,1);
 		letters = addTextField("",5,2,1,1);
 		submit = addButton("Submit",5,2,1,1);
 		start = addButton("Start New Game", 1,5,1,1);
 		stop = addButton("Stop Game", 2,5,1,1);
 		reset = addButton("Reset",3,5,1,1);
+		scoreBox = addTextField(scoreNum+"",4,6,1,1);
 	}
 	
 	public void buttonClicked(Button buttonClicked)
@@ -71,6 +76,9 @@ public class GameGui extends GBFrame
 					isUsed[i][j] = false;
 				}
 			}
+			//If word is true 
+			scoreNum++;
+			scoreBox.setText(scoreNum+"");
 		}
 		if(buttonClicked == charField[0][0])
 		{
