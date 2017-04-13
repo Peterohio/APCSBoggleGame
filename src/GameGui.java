@@ -21,6 +21,8 @@ public class GameGui extends GBFrame
 	
 	private final int timeInSeconds = 180;
 	private int scoreNum;
+	private BoggleValidation validCheck;
+	private Boolean canSubmit;
 	
 	public GameGui()
 	{	
@@ -34,8 +36,10 @@ public class GameGui extends GBFrame
 				isUsed[i][j] = false;
 			}
 		}
-		//Variables for score and time
+		//Other variables
+		validCheck = new BoggleValidation();
 		scoreNum = 0;
+		canSubmit = false;
 		//Create rest of field
 		word = addLabel("Current Word:",5,1,1,1);
 		score = addLabel("Score:",4,5,1,1);
@@ -53,11 +57,12 @@ public class GameGui extends GBFrame
 		{
 			//Stop timer
 			//Don't accept new word entries
+			canSubmit = false;
 		}
 		if(buttonClicked == start)
 		{
 			//start timer and accept entries
-			
+			canSubmit = true;
 		}
 		if(buttonClicked == reset)
 		{
@@ -65,9 +70,12 @@ public class GameGui extends GBFrame
 		}
 		if(buttonClicked == submit)
 		{
+			if(canSubmit)
+			{
 			//check text entry and see if it is a valid play
 			//if it is a valid play check to see if it is a word
 			//if both are true, add points and clear text field
+			String wordToCheck = letters.getText();
 			letters.setText("");
 			for(int i=0; i<4; i++)
 			{
@@ -76,9 +84,13 @@ public class GameGui extends GBFrame
 					isUsed[i][j] = false;
 				}
 			}
-			//If word is true 
-			scoreNum++;
-			scoreBox.setText(scoreNum+"");
+			if(validCheck.isAWord(wordToCheck))
+			{
+				//If word is true 
+				scoreNum++;
+				scoreBox.setText(scoreNum+"");
+			}
+			}
 		}
 		if(buttonClicked == charField[0][0])
 		{

@@ -3,10 +3,11 @@ import java.util.ArrayList;
 public class BoggleValidation 
 {
 	private static ArrayList<String> words;		
-	public static ArrayList<Character> list = new ArrayList<Character>();
-	public static String wordCreated = "";
+	public static ArrayList<Character> list;
+	public static String wordCreated;
 	public static int[][] index = {{0, 1, 2, 3}, {4, 5, 6, 7}, {8, 9, 10, 11}, {12, 13, 14, 15}};
-	public static ArrayList<Integer> usedInWord = new ArrayList<Integer>();
+	public static ArrayList<Integer> usedInWord;
+	EasyReader inFile;
 	
 	
 	public boolean isAdjacent(int num)
@@ -51,7 +52,7 @@ public class BoggleValidation
 		return false;
 	}
 	
-	public static boolean isAWord(String str)
+	public boolean isAWord(String str)
 	{
 		if(words.contains(str))	
 			return true;
@@ -59,10 +60,17 @@ public class BoggleValidation
 			return false;
 	}
 	
-	public static void main(String[] args)
+	public BoggleValidation()
 	{
-		EasyReader infile = new EasyReader("quoteA.txt");
-		while(!infile.eof())
-			words.add(infile.readWord());
+		inFile = new EasyReader("quoteA.txt");
+		words = new ArrayList<String>();
+		list = new ArrayList<Character>();
+		usedInWord = new ArrayList<Integer>();
+		while(!inFile.eof())
+		{
+			words.add(inFile.readLine());
+		}
+		words.remove(words.size()-1);  // removes end of file character
+		words.remove(0);
 	}
 }
